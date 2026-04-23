@@ -6,11 +6,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "vendors")
+@Getter
+@Setter
 public class Vendor {
 
     @Id
@@ -22,25 +26,5 @@ public class Vendor {
 
     @Column(nullable = false, precision = 19, scale = 2)
     private BigDecimal totalRevenue = BigDecimal.ZERO;
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BigDecimal getTotalRevenue() {
-        return totalRevenue;
-    }
-
-    public void setTotalRevenue(BigDecimal totalRevenue) {
-        this.totalRevenue = totalRevenue;
-    }
 }
 
